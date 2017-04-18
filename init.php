@@ -12,8 +12,8 @@ class Af_Youtube_Thumbnail extends Plugin {
 
   function hook_article_filter($article) {
     if(strpos($article["link"], "youtube.com") !== FALSE) {
-      $video_id = str_replace('http://www.youtube.com/watch?v=', '', $article["link"]);
-      $article["content"] = '<img src="http://img.youtube.com/vi/'.$video_id.'/hqdefault.jpg" alt="'.$article["title"].'" />';
+      $video_id = str_replace('https://www.youtube.com/watch?v=', '', $article["link"]);
+      $article["content"] = '<img src="https://img.youtube.com/vi/'.$video_id.'/hqdefault.jpg" alt="'.$article["title"].'" /><br />'.$article["content"];
     }
 
     return $article;
